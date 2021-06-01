@@ -2,7 +2,6 @@ package com.okugata.sintaksys
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import com.okugata.sintaksys.databinding.ActivityMainBinding
 
@@ -15,17 +14,17 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(binding.root)
 
         binding.run {
-            submitButton.setOnClickListener(this@MainActivity)
-            textResult.visibility = View.GONE
+//            submitButton.setOnClickListener(this@MainActivity)
+//            textResult.visibility = View.GONE
         }
     }
 
     override fun onClick(v: View) {
-        when(v.id){
-            R.id.submit_button -> {
-                binding.textResult.text = binding.textInput.text.toString()
-                binding.textResult.visibility = View.VISIBLE
-            }
-        }
+//        when(v.id){
+//            R.id.submit_button -> {
+//                binding.textResult.text = binding.textInput.text.toString()
+//                binding.textResult.visibility = View.VISIBLE
+//            }
+//        }
     }
 }
