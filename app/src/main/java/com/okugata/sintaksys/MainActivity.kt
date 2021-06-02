@@ -19,31 +19,31 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(binding.root)
 
         binding.run {
-            submitButton.setOnClickListener(this@MainActivity)
-            textResult.visibility = View.GONE
+//            submitButton.setOnClickListener(this@MainActivity)
+//            textResult.visibility = View.GONE
         }
     }
 
     override fun onClick(v: View) {
         when (v.id) {
-            R.id.submit_button -> {
-                mainViewModel.getCorrectedText(Text(binding.textInput.text.toString()))
-                    .observe(this) {
-                        when(it) {
-                            is Resource.Success -> {
-                                binding.textResult.text = it.data?.message
-                                binding.textResult.visibility = View.VISIBLE
-                            }
-                            else -> {
-                                Toast.makeText(
-                                    this,
-                                    "There is error",
-                                    Toast.LENGTH_SHORT
-                                ).show()
-                            }
-                        }
-                    }
-            }
+//            R.id.submit_button -> {
+//                mainViewModel.getCorrectedText(Text(binding.textInput.text.toString()))
+//                    .observe(this) {
+//                        when(it) {
+//                            is Resource.Success -> {
+//                                binding.textResult.text = it.data?.message
+//                                binding.textResult.visibility = View.VISIBLE
+//                            }
+//                            else -> {
+//                                Toast.makeText(
+//                                    this,
+//                                    "There is error",
+//                                    Toast.LENGTH_SHORT
+//                                ).show()
+//                            }
+//                        }
+//                    }
+//            }
         }
     }
 }
