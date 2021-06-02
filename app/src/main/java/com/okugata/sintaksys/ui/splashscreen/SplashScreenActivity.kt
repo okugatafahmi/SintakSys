@@ -1,30 +1,23 @@
-package com.okugata.sintaksys
+package com.okugata.sintaksys.ui.splashscreen
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.WindowManager
+import com.okugata.sintaksys.MainActivity
+import com.okugata.sintaksys.R
 import java.util.*
 import kotlin.concurrent.schedule
 
 class SplashScreenActivity : AppCompatActivity() {
+    private val splashDelay = 2000L
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
 
-//        window.setFlags(
-//            WindowManager.LayoutParams.FLAG_FULLSCREEN,
-//            WindowManager.LayoutParams.FLAG_FULLSCREEN
-//        )
-
-        Timer("SplashScreen", false).schedule(SPLASH_DELAY) {
+        Timer("SplashScreen", false).schedule(splashDelay) {
             val intent = Intent(applicationContext, MainActivity::class.java)
             startActivity(intent)
             finish()
         }
-    }
-
-    companion object{
-        private const val SPLASH_DELAY = 2000L
     }
 }
