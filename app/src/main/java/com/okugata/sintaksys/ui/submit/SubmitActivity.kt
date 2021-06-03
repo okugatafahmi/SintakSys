@@ -3,6 +3,7 @@ package com.okugata.sintaksys.ui.submit
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.okugata.sintaksys.MainViewModel
@@ -20,7 +21,7 @@ class SubmitActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySubmitBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_submit)
+        setContentView(binding.root)
 
 //        val text = intent.getStringExtra(SUBMIT_TEXT)
 //        val type = intent.getStringExtra(SUBMIT_TYPE)
@@ -41,7 +42,7 @@ class SubmitActivity : AppCompatActivity(), View.OnClickListener {
                     .observe(this) {
                         when(it) {
                             is Resource.Success -> {
-//                                SEND INTENT KE RESULT ACTIVITY
+                                // SEND INTENT KE RESULT ACTIVITY
                                 val moveWithDataIntent = Intent(this@SubmitActivity, ResultActivity::class.java)
                                 moveWithDataIntent.putExtra(ResultActivity.RESULT, it.data?.message)
                                 startActivity(moveWithDataIntent)

@@ -13,13 +13,13 @@ class ResultActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityResultBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_result)
+        setContentView(binding.root)
 
-//        val text = intent.getStringExtra(RESULT)
-        binding.resultTextview.text = "text.toString()"
+        val text = intent.getStringExtra(RESULT)
+        binding.resultTextview.text = text
     }
 
     companion object {
-        const val RESULT = ""
+        const val RESULT = "extra_result"
     }
 }

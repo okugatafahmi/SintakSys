@@ -13,7 +13,6 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var binding: ActivityMainBinding
-    private val mainViewModel: MainViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,8 +21,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         binding.run {
             createNewButton.setOnClickListener(this@MainActivity)
-//            submitButton.setOnClickListener(this@MainActivity)
-//            textResult.visibility = View.GONE
         }
     }
 
@@ -35,24 +32,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 moveWithDataIntent.putExtra(SubmitActivity.SUBMIT_TEXT, "")
                 startActivity(moveWithDataIntent)
             }
-//            R.id.submit_button -> {
-//                mainViewModel.getCorrectedText(Text(binding.textInput.text.toString()))
-//                    .observe(this) {
-//                        when(it) {
-//                            is Resource.Success -> {
-//                                binding.textResult.text = it.data?.message
-//                                binding.textResult.visibility = View.VISIBLE
-//                            }
-//                            else -> {
-//                                Toast.makeText(
-//                                    this,
-//                                    "There is error",
-//                                    Toast.LENGTH_SHORT
-//                                ).show()
-//                            }
-//                        }
-//                    }
-//            }
         }
     }
 }
