@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.okugata.sintaksys.R
 import com.okugata.sintaksys.core.data.Resource
+import com.okugata.sintaksys.core.utils.StringUtils
 import com.okugata.sintaksys.databinding.ActivitySubmitBinding
 import com.okugata.sintaksys.domain.model.Text
 import com.okugata.sintaksys.ui.result.ResultActivity
@@ -35,8 +36,7 @@ class SubmitActivity : AppCompatActivity(), View.OnClickListener {
                         when(it) {
                             is Resource.Success -> {
                                 val result = it.data?.message?.let { message ->
-                                    // StringUtils.addPunctuation(input, message)
-                                    message
+                                    StringUtils.addPunctuation(input, message)
                                 } ?: "Empty result"
                                 // SEND INTENT KE RESULT ACTIVITY
                                 val moveWithDataIntent = Intent(this@SubmitActivity, ResultActivity::class.java)
