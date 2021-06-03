@@ -7,7 +7,7 @@ import retrofit2.http.POST
 
 interface ApiService {
 
-    @POST("grammar-api/")
+    @POST("/")
     suspend fun getCorrectedText(
         @Body text: Text
     ): TextResponse
