@@ -1,11 +1,10 @@
 package com.okugata.sintaksys.ui.submit
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.okugata.sintaksys.MainViewModel
 import com.okugata.sintaksys.R
 import com.okugata.sintaksys.core.data.Resource
@@ -22,13 +21,6 @@ class SubmitActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         binding = ActivitySubmitBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-//        val text = intent.getStringExtra(SUBMIT_TEXT)
-//        val type = intent.getStringExtra(SUBMIT_TYPE)
-
-//        if(type === "UPLOAD"){
-////    SET TEXT INPUT DENGAN VAL TEXT
-//        }
 
         binding.run {
             submitButton.setOnClickListener(this@SubmitActivity)
