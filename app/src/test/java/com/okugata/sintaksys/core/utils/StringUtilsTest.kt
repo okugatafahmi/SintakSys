@@ -15,4 +15,14 @@ class StringUtilsTest {
         val expected = "Halo, saya okugata."
         assertEquals(expected, actual)
     }
+
+    @Test
+    fun addColor() {
+        val actual = StringUtils.addColor(
+            "Hal, sy ogata.",
+            "Halo saya okugata"
+        )
+        val expected = "Halo, saya okugata."
+        assertEquals(expected, actual)
+    }
 }

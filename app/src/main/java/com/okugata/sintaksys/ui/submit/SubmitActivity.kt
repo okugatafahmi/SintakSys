@@ -36,7 +36,8 @@ class SubmitActivity : AppCompatActivity(), View.OnClickListener {
                         when(it) {
                             is Resource.Success -> {
                                 val result = it.data?.message?.let { message ->
-                                    StringUtils.addPunctuation(input, message)
+                                    val temp = StringUtils.addPunctuation(input, message)
+                                    StringUtils.addColor(input, temp)
                                 } ?: "Empty result"
                                 // SEND INTENT KE RESULT ACTIVITY
                                 val moveWithDataIntent = Intent(this@SubmitActivity, ResultActivity::class.java)
