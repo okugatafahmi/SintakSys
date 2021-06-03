@@ -1,6 +1,6 @@
 package com.okugata.sintaksys.di
 
-import com.okugata.sintaksys.MainViewModel
+import com.okugata.sintaksys.ui.submit.SubmitViewModel
 import com.okugata.sintaksys.domain.usecase.SintaksysInteractor
 import com.okugata.sintaksys.domain.usecase.SintaksysUseCase
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -11,5 +11,5 @@ val useCaseModule = module {
 }
 
 val viewModelModule = module {
-    viewModel { MainViewModel(get()) }
+    viewModel { SubmitViewModel(get()) }
 }
