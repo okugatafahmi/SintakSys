@@ -14,7 +14,6 @@ object StringUtils {
                 sb.append(wordsAfter[i])
                 if (Pattern.matches("\\p{Punct}", wordsBefore[i])) {
                     sb.append(wordsBefore[i].last())
-                    return sb.toString()
                 }
                 if (wordsBefore.contains("\n")) {
                     sb.append("\n")
@@ -26,7 +25,7 @@ object StringUtils {
         return withoutPunctuation
     }
 
-    fun addColor(stringBefore: String, stringAfter: String): String {
+    fun mergeCorrectedTextInHtml(stringBefore: String, stringAfter: String): String {
         val before = stringBefore.split(" ")
         val after = stringAfter.split(" ")
 
@@ -34,13 +33,13 @@ object StringUtils {
             val sb = StringBuilder()
             for (i in after.indices) {
                 if (before[i] != after[i]) {
-                    sb.append("<font backgroundColor=#d95975>")
+                    sb.append("<span style='background-color:#d95975;'>")
                         .append(before[i])
-                        .append("</font> ")
-                        .append(after[i])
+                        .append("</span> ")
+                        .append(newLineToBr(after[i]))
                 }
                 else {
-                    sb.append(after[i])
+                    sb.append(newLineToBr(after[i]))
                 }
                 sb.append(" ")
             }
@@ -48,4 +47,7 @@ object StringUtils {
         }
         return stringAfter
     }
+
+    fun newLineToBr(string: String) =
+        string.replace("\n","<br/>")
 }

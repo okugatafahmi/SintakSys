@@ -1,8 +1,8 @@
 package com.okugata.sintaksys.ui.result
 
 import android.os.Bundle
-import android.text.Html
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.text.HtmlCompat
 import com.okugata.sintaksys.databinding.ActivityResultBinding
 
 class ResultActivity : AppCompatActivity() {
@@ -13,8 +13,8 @@ class ResultActivity : AppCompatActivity() {
         binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val text = intent.getStringExtra(RESULT)
-        binding.resultTextview.text = Html.fromHtml(text)
+        val text = intent.getStringExtra(RESULT) ?: "Empty Result"
+        binding.resultTextview.text = HtmlCompat.fromHtml(text, HtmlCompat.FROM_HTML_MODE_LEGACY)
     }
 
     companion object {

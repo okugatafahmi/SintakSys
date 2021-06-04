@@ -18,7 +18,7 @@ class StringUtilsTest {
 
     @Test
     fun addColor() {
-        val actual = StringUtils.addColor(
+        val actual = StringUtils.mergeCorrectedTextInHtml(
             "Hal, sy ogata.",
             "Halo saya okugata"
         )
